@@ -1,0 +1,6 @@
+contract/broadcast/
+contract/cache/
+frontend/node_modules/
+frontend/.env
+contract/.env
+.env
