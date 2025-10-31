@@ -4,6 +4,7 @@ pragma solidity 0.8.30;
 contract MiniArtWork {
     error ArtistAlreadyRegistered(address artist);
     error ArtistUnknown(uint artistId);
+    error OnlyOwner();
 
     address public immutable OWNER;
     address[] private artists;
@@ -13,6 +14,11 @@ contract MiniArtWork {
 
     event NewArtistRegistered(address indexed artist, uint artistId);
     event ArtistRemoved(address indexed artist);
+
+    modifier onlyOwner() {
+        if (msg.sender != OWNER) revert OnlyOwner();
+        _;
+    }
 
     modifier artistExists(uint _artistId) {
         if (_artistId > artists.length) revert ArtistUnknown(_artistId);
@@ -49,7 +55,7 @@ contract MiniArtWork {
         return artists;
     }
 
-    function deleteArtist(uint _artistId) external artistExists(_artistId) {
+    function deleteArtist(uint _artistId) external onlyOwner artistExists(_artistId) {
         address artist = artists[_artistId];
         uint index = artistId[artist] - 1;
 
