@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { ConnectWallet } from "./components/connect-wallet";
 import { useReadContract, useWriteContract } from "wagmi";
 import { wagmiContractConfig } from "./lib/contract";
 import { getAddress, isAddress, zeroAddress, type Address } from "viem";
@@ -61,7 +60,8 @@ export default function App() {
 
   return (
     <div className="max-w-2xl mx-auto mt-10 p-4 space-y-6">
-      <ConnectWallet />
+      {/* <ConnectWallet /> */}
+      <appkit-button />
       <h1 className="text-2xl font-bold text-center">Artists Directory</h1>
 
       {/* Artist count */}
