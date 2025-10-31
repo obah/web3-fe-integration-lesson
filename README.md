@@ -25,6 +25,7 @@ Before you begin, ensure you have the following installed:
 ```bash
 git clone /obah/web3-fe-integration-lesson
 cd web3-fe-integration-lesson
+git switch lesson-1
 ```
 
 ### 2. Install Frontend Dependencies
