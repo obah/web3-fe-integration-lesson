@@ -1,5 +1,8 @@
+// const ANVIL_ADDRESS = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+const BASE_SEPOLIA_ADDRESS = "0xBD4F3F28d18AD0756219D6ba70bE2b64a090c4BE";
+
 export const wagmiContractConfig = {
-  address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+  address: BASE_SEPOLIA_ADDRESS,
   abi: [
     { type: "constructor", inputs: [], stateMutability: "nonpayable" },
     {
@@ -44,7 +47,7 @@ export const wagmiContractConfig = {
         {
           name: "artist",
           type: "address",
-          indexed: false,
+          indexed: true,
           internalType: "address",
         },
       ],
@@ -57,7 +60,7 @@ export const wagmiContractConfig = {
         {
           name: "artist",
           type: "address",
-          indexed: false,
+          indexed: true,
           internalType: "address",
         },
         {
